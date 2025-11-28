@@ -3,12 +3,10 @@ import java.util.Scanner;
 public class ClasificacionMascotas {
 
 
-    public void clasificar() {
+    public void clasificar(Scanner scanner) {
 
 
-        Scanner scanner = new Scanner(System.in);
-
-
+        String veterinario;
 
 
 
@@ -18,16 +16,32 @@ public class ClasificacionMascotas {
         System.out.println("Cual es la edad de sus mascota?: ");
         int edadAnimal = scanner.nextInt();
 
+        scanner.nextLine();
+
+
 
         switch (tipoAnimal.toLowerCase()){
-            case "perro" -> System.out.println("Veterinario Canino");
-            case "gato" -> System.out.println("Veterinario Felino");
-            case "ave" -> System.out.println("Veterinario Animales Exóticos");
-            case "otro" -> System.out.println("Veterinario General");
-            default -> System.out.println("Tipo de mascota no exite en nuestra base de datos");
-
+            case "perro" -> veterinario = "Veterinario Canino";
+            case "gato" -> veterinario = "Veterinario Felino";
+            case "ave" -> veterinario = "Veterinario Animales Exóticos";
+            case "otro" -> veterinario = "Veterinario General";
+            default -> veterinario = "Tipo de mascota no exite en nuestra base de datos";
 
         }
-        scanner.close();
+
+        boolean vacunaAdicional = false;
+        if ((tipoAnimal.equals("perro") || tipoAnimal.equals("gato")) && edadAnimal > 5){
+            vacunaAdicional = true;
+
+        }
+
+        System.out.println("Veterinario asignado: " + veterinario);
+
+        if (vacunaAdicional){
+            System.out.println("Se recomienda una vacuna adicional ");
+        }
+
+
+
     }
 }

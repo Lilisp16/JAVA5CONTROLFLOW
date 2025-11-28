@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class SistemaFacturacion {
 
-        public void facturar() {
-            Scanner scanner = new Scanner(System.in);
+        public void facturar(Scanner scanner) {
+
 
 
             System.out.println("Ingre el valor total de su compra: ");
@@ -16,6 +16,7 @@ public class SistemaFacturacion {
             System.out.println("Eres miembre de LS?: si/no ");
             String miembroTexto = scanner.nextLine();
             boolean esMiembro = miembroTexto.equalsIgnoreCase("si");
+
 
             double totalFinal = valorCompra;
 
@@ -34,7 +35,7 @@ public class SistemaFacturacion {
 
             System.out.println("Total a pagar $: " + totalFinal);
 
-            scanner.close();
+
         }
     }
 
