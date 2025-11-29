@@ -17,6 +17,15 @@ public class Main {
         ClasificacionMascotas mascotas = new ClasificacionMascotas();
         mascotas.clasificar(scanner);
 
+        System.out.println("\n PARQUEADERO FULLSTACK:");
+        ControlAccesoParqueadero parqueadero = new ControlAccesoParqueadero();
+        parqueadero.parquear(scanner);
+
+        System.out.println("\n TIENDA DE ROPA LS_CASUAL:");
+        PromocionesTiendaRopa promociones = new PromocionesTiendaRopa();
+        promociones.comprar(scanner);
+
+
         scanner.close();
 
         }
